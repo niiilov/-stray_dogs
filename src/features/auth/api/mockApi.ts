@@ -7,10 +7,8 @@ export const mockSignIn = async (dto: SignInDto): Promise<AuthResponse> => {
     token: "mock-token",
     user: {
       id: "1",
-      email: dto.email,
-      username: "ivan",
-      first_name: "Иван",
-      last_name: "Иванов",
+      full_name: "ivan",
+      role: "Иван",
     },
   };
 };
@@ -22,10 +20,8 @@ export const mockSignUp = async (dto: SignUpDto): Promise<AuthResponse> => {
     token: "mock-token",
     user: {
       id: "2",
-      email: dto.email,
-      username: dto.username,
-      first_name: dto.first_name,
-      last_name: dto.last_name,
+      full_name: dto.full_name,
+      role: dto.role,
     },
   };
 };

@@ -4,22 +4,17 @@ export interface SignInDto {
 }
 
 export type SignUpDto = {
-  email: string;
-  username: string;
-  first_name: string;
-  last_name: string;
+  full_name: string;
+  role: string;
+  login: string;
   password: string;
-  password_confirm: string;
 };
 
 export type AuthResponse = {
   user: {
     id: string;
-    email: string;
-    username: string;
-    first_name: string;
-    last_name: string;
-    avatar?: string;
+    full_name: string;
+    role: string;
   };
   token: string;
 };

@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import { ROUTE_CONSTANTS } from "@shared/config/routes";
+import { Application } from "@pages/Application"
 import { Home } from "@pages/Home";
 import { SignIn } from "@pages/SignIn";
 import { SignUp } from "@pages/SignUp";
@@ -47,6 +48,7 @@ export const Router: FC = () => {
 
           {/* Защищенные маршруты */}
           <Route path={ROUTE_CONSTANTS.HOME} element={<Home />} />
+          <Route path={ROUTE_CONSTANTS.APPLICATION} element={<Application />} />
 
           {/* Открытые маршруты */}
           <Route path={ROUTE_CONSTANTS.NOTFOUND} element={<NotFound />} />

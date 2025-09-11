@@ -1,15 +1,29 @@
 // import { ModeToggle } from "@shared/ui/modeToggle";
 import { Link } from "react-router-dom";
+import { Button } from "@shared/ui/button";
 // import { UserDropdown } from "@features/ui/UserDropdown";
 
 export const Navbar = () => {
-  const isAuth: boolean = true;
-
   return (
-    <div className="width sm:absolute pb-4 bg-white dark:bg-background border-b px-3 mt-9 flex items-center justify-between">
-      <Link to="/" className="font-extrabold text-xl">
-        Бездомные собаки
-      </Link>
-    </div>
+      <div className="max-w-[1440px] w-full flex items-center justify-between px-6 py-4">
+        {/* Логотип */}
+        <Link to="/" className="flex items-center gap-2">
+          <img src="logo.svg" alt="логотип"/>
+        </Link>
+
+        {/* Кнопки */}
+        <div className="flex items-center gap-3">
+          <Link to="/sign-in">
+            <Button variant="outline" size="default">
+              Войти
+            </Button>
+          </Link>
+          <Link to="/application">
+            <Button variant="default" size="default">
+              Подать заявку
+            </Button>
+          </Link>
+        </div>
+      </div>
   );
 };
