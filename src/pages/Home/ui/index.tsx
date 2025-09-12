@@ -6,7 +6,7 @@ export const Home = () => {
     <section className="w-full flex flex-col items-center justify-center min-h-screen text-center px-4">
       <div className="max-w-[1440px]">
         {/* Заголовок */}
-        <h1 className="text-[65px] font-bold leading-tight text-gray-400">
+        <h1 className="text-[35px] font-bold leading-tight text-gray-400 md:text-[65px]">
           Центр приема заявок <br/>
           на отлов{" "}
           <span className="text-blue-600 underline">
@@ -15,7 +15,7 @@ export const Home = () => {
         </h1>
 
         {/* Подзаголовок */}
-        <p className="mt-6 text-[30px] text-gray-400">
+        <p className="mt-6 text-[14px] text-gray-400 md:text-[35px]">
           Подача заявлений на отлов бездомных собак <br/>
           Официальный портал города Липецк
         </p>

@@ -9,6 +9,8 @@ import { Alert, AlertTitle, AlertDescription } from "@shared/ui/alert";
 import { useAuth } from "@features/auth/hooks/useAuth";
 import clsx from "clsx";
 
+import Dogs from "./assets/dogs.png";
+
 export const SignInForm = () => {
   const { signIn, loading } = useAuth();
   const [login, setLogin] = useState("");
@@ -73,40 +75,39 @@ export const SignInForm = () => {
       )}
 
       {/* ===== ФОРМА ВХОДА ===== */}
-      <form
-        onSubmit={onSubmit}
-        className="flex flex-col gap-4 rounded-xl px-4 py-6 bg-neutral-100 dark:bg-[#151B28] w-full max-w-[350px]"
-      >
-        <h3 className="text-center text-2xl font-semibold">Вход</h3>
+      <div className="flex justify-between items-center border-1 rounded-xl">
+        <form
+          onSubmit={onSubmit}
+          className="flex flex-col gap-4 rounded-xl px-48 py-6 dark:bg-[#151B28] w-full"
+        >
+          <h3 className="text-center text-[16px] font-semibold mb-6">Вход в личный кабинет</h3>
 
-        <div className="w-full">
-          <InputWithLabel
-            label="Логин"
-            id="login"
-            type="text"
-            placeholder="Введите ваш логин"
-            value={login}
-            onChange={(e) => setLogin(e.target.value)}
+          <div className="w-full">
+            <InputWithLabel
+              label="Логин"
+              id="login"
+              type="text"
+              placeholder="Введите ваш логин"
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+            />
+          </div>
+
+          <InputWithPassword
+            label="Пароль"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
 
-        <InputWithPassword
-          label="Пароль"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
 
-        <Button type="submit" className="w-full" disabled={loading}>
-          {loading ? "Входим..." : "Войти"}
-        </Button>
 
-        <span className="text-center text-sm text-gray-400 w-full">
-          Нет аккаунта?{" "}
-          <Link className="text-[#167EE6] underline" to="/sign-up">
-            Регистрация
-          </Link>
-        </span>
-      </form>
+          <Button type="submit" className="w-full" disabled={loading}>
+            {loading ? "Входим..." : "Войти"}
+          </Button>
+
+        </form>
+        <img src={Dogs} alt="собака" />
+      </div>
     </>
   );
 };
