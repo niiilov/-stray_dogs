@@ -24,7 +24,7 @@ export function InputWithLabel({
   required, // получили required
 }: InputWithLabelProps) {
   return (
-    <div className={cn("grid w-full max-w-sm items-center gap-3", className)}>
+    <div className={cn("grid w-full items-center gap-3", className)}>
       <Label htmlFor={id}>{label}</Label>
       <Input
         type={type}

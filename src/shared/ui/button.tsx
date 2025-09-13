@@ -9,9 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        outline: "px-6 py-2 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition",
-        default:
-          "px-6 py-2 border-2 border-blue-600 bg-blue-600 text-white rounded-full hover:bg-white hover:text-blue-600 transition"
+        default: "px-6 py-2 border-2 rounded-full transition",
+        cube: "px-6 py-2 border-2 rounded-lg transition"
       },
       size: {
         default: "text-[12px] h-9 px-4 py-2 has-[>svg]:px-3 md:text-[12px]",
@@ -19,10 +18,16 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
       },
+      color: {
+        default: "border-blue-600 bg-blue-600 text-white hover:bg-white hover:text-blue-600",
+        outline: "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white",
+        grey: "border-grey-600 text-grey-600 hover:border-blue-600 hover:text-blue-600",
+      },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
+      color: "default",
     },
   }
 );
@@ -31,6 +36,7 @@ function Button({
   className,
   variant,
   size,
+  color,
   asChild = false,
   ...props
 }: React.ComponentProps<"button"> &
@@ -42,7 +48,7 @@ function Button({
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size, color, className }))}
       {...props}
     />
   );

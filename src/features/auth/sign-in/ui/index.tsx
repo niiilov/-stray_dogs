@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 
 import { Button } from "@shared/ui/button";
 import { InputWithLabel } from "@shared/ui/inputLabel";
@@ -9,7 +9,7 @@ import { Alert, AlertTitle, AlertDescription } from "@shared/ui/alert";
 import { useAuth } from "@features/auth/hooks/useAuth";
 import clsx from "clsx";
 
-import Dogs from "./assets/dogs.png";
+import Dog from "./assets/dog.png";
 
 export const SignInForm = () => {
   const { signIn, loading } = useAuth();
@@ -78,7 +78,7 @@ export const SignInForm = () => {
       <div className="flex justify-between items-center border-1 rounded-xl">
         <form
           onSubmit={onSubmit}
-          className="flex flex-col gap-4 rounded-xl px-48 py-6 dark:bg-[#151B28] w-full"
+          className="flex flex-col gap-4 rounded-xl mx-48 py-6 dark:bg-[#151B28] w-full"
         >
           <h3 className="text-center text-[16px] font-semibold mb-6">Вход в личный кабинет</h3>
 
@@ -106,7 +106,7 @@ export const SignInForm = () => {
           </Button>
 
         </form>
-        <img src={Dogs} alt="собака" />
+        <img src={Dog} alt="собака" />
       </div>
     </>
   );

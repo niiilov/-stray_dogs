@@ -14,7 +14,7 @@ export const Navbar = () => {
         {/* Кнопки */}
         <div className="flex items-center gap-3">
           <Link to="/sign-in">
-            <Button variant="outline" size="default">
+            <Button variant="default" size="default" color="outline">
               Войти
             </Button>
           </Link>
