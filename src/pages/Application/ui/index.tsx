@@ -1,5 +1,8 @@
 import { Button } from "@shared/ui/button";
 import { InputWithLabel } from "@shared/ui/inputLabel";
+import { ClipboardPlus, MapPin, RectangleEllipsis, UserRound, FileUser, Contact, Smile, Clock } from 'lucide-react';
+import { Select } from "@shared/ui/dropdown";
+import { Label } from "@shared/ui/label";
 
 export const Application = () => {
   return (
@@ -7,7 +10,7 @@ export const Application = () => {
       <div className="w-[1050px] mx-auto p-6 border-1 border-gray-300 rounded-xl bg-white">
         {/* Заголовок */}
         <h2 className="text-lg font-semibold flex items-center gap-2 mb-1">
-          Подача заявки
+          <ClipboardPlus /> Подача заявки
         </h2>
         <p className="text-sm text-gray-400 mb-6">
           * Заполните все поля для подачи заявки
@@ -20,6 +23,7 @@ export const Application = () => {
             <h3 className="font-semibold text-sm mb-2">Информация о собаке</h3>
 
             <InputWithLabel
+              icon={<MapPin className="h-5 w-5"/>}
               label="Адрес"
               id="address"
               type="text"
@@ -28,6 +32,7 @@ export const Application = () => {
             />
 
             <InputWithLabel
+              icon={<RectangleEllipsis className="h-5 w-5"/>}
               label="Количество"
               id="count"
               type="number"
@@ -35,7 +40,7 @@ export const Application = () => {
               required
             />
 
-            <div>
+            {/* <div>
               <label className="block text-sm text-gray-600 mb-1">Поведение</label>
               <select
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring focus:ring-blue-300"
@@ -44,9 +49,17 @@ export const Application = () => {
                 <option value="aggressive">Агрессивное</option>
                 <option value="calm">Спокойное</option>
               </select>
-            </div>
+            </div> */}
 
-            <div>
+            <Label><Smile className="h-5 w-5"/> Поведение</Label>
+              <Select
+              placeholder="Выберите поведение"
+                items={[
+                  { label: "Агрессивное", value: "agressor" },
+                  { label: "Не агрессивное", value: "non agressor" },
+                ]}/>
+
+            {/* <div>
               <label className="block text-sm text-gray-600 mb-1">Срочность</label>
               <select
                 className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring focus:ring-blue-300"
@@ -55,14 +68,24 @@ export const Application = () => {
                 <option value="medium">Срочно</option>
                 <option value="high">Не срочно</option>
               </select>
-            </div>
-          </div>
+            </div>*/}
+
+            <Label><Clock className="h-5 w-5"/> Срочность</Label>
+              <Select
+              placeholder="Выберите срочность"
+                items={[
+                  { label: "Срочно", value: "agressor" },
+                  { label: "Не срочно", value: "non fast" },
+                ]}/>
+          </div> 
+
 
           {/* Правая колонка */}
           <div className="flex-1 flex flex-col gap-4">
             <h3 className="font-semibold text-sm mb-2">Информация о заявителе</h3>
 
-            <InputWithLabel
+            {/* <InputWithLabel
+              icon={<UserRound className="h-5 w-5"/>}
               label="Заявитель"
               id="applicant"
               type="text"
@@ -71,13 +94,27 @@ export const Application = () => {
             />
 
             <InputWithLabel
+              icon={<FileUser className="h-5 w-5"/>}
               label="Сведения о заявителе"
               id="applicantInfo"
               type="text"
               placeholder="Введите сведения"
-            />
+            /> */}
+
+            <Label><UserRound className="h-5 w-5"/> Заявитель</Label>
+              <Select
+              placeholder="Выберите заявителя"
+                items={[
+                ]}/>
+
+            <Label><FileUser className="h-5 w-5"/> Сведения о заявителе</Label>
+              <Select
+              placeholder="Выберите сведения о заявителе"
+                items={[
+                ]}/>
 
             <InputWithLabel
+              icon={<Contact className="h-5 w-5"/>}
               label="Контактное лицо"
               id="contact"
               type="text"

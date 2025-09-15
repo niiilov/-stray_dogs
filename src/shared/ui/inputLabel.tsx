@@ -1,8 +1,10 @@
 import { cn } from "@shared/lib/utils";
 import { Input } from "./input";
 import { Label } from "./label";
+import type { ReactNode } from "react";
 
 interface InputWithLabelProps {
+  icon?: ReactNode;
   label: string;
   type: string;
   id?: string;
@@ -14,6 +16,7 @@ interface InputWithLabelProps {
 }
 
 export function InputWithLabel({
+  icon,
   label,
   type,
   id,
@@ -25,7 +28,12 @@ export function InputWithLabel({
 }: InputWithLabelProps) {
   return (
     <div className={cn("grid w-full items-center gap-3", className)}>
-      <Label htmlFor={id}>{label}</Label>
+       <Label htmlFor={id}>
+        <span className="flex items-center gap-1">
+          {icon && <span className="text-gray-500">{icon}</span>}
+          {label}
+        </span>
+      </Label>
       <Input
         type={type}
         onChange={onChange}

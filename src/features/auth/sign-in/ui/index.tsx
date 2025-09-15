@@ -78,11 +78,11 @@ export const SignInForm = () => {
       <div className="flex justify-between items-center border-1 rounded-xl">
         <form
           onSubmit={onSubmit}
-          className="flex flex-col gap-4 rounded-xl mx-48 py-6 dark:bg-[#151B28] w-full"
+          className="flex flex-col gap-4 rounded-xl mx-16 dark:bg-[#151B28] w-full"
         >
           <h3 className="text-center text-[16px] font-semibold mb-6">Вход в личный кабинет</h3>
 
-          <div className="w-full">
+          <div className="w-full md:w-[450px]">
             <InputWithLabel
               label="Логин"
               id="login"
